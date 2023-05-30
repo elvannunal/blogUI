@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav">
+
+</nav>
+<header class="masthead"
+  style="background-image: url('https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto ">
+        <div class="page-heading">
+          <h1>Dayl'y New Blog</h1>
+
+          <span class="subheading">A Blog Theme by Start Bootstrap</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div id="exampleModal" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            </div>
+
+
+            <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+              <nav id="colorlib-main-menu" role="navigation">
+                <ul>
+                  <li class="colorlib-active">
+                    <a href="api/Post">Home</a>
+                  </li>
+                  <li>
+                    <a href="api/Post/add">Add Blog</a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+    
+            <div class="container formsGroup">
+
+          
+                <form #myForm="ngForm" (ngSubmit)="onSubmitPost()">
+                  <div class="form-group">
+                    <label class="col-form-label">Title:</label>
+                    <input type="text" [(ngModel)]="post.title" name="title" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Featured Image Url:</label>
+                    <input type="text" [(ngModel)]="post.featuredImageUrl" name="featuredImageUrl" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label"> Url Handler:</label>
+                    <input type="text" [(ngModel)]="post.urlHandle" name="urlHandle" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label"> Visible:</label>
+                    <input type="checkbox" [(ngModel)]="post.visible" name="visible">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Author:</label>
+                    <input type="text" [(ngModel)]="post.author" name="author" class="form-control">
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">Blog:</label>
+                    <textarea class="form-control" [(ngModel)]="post.content" name="content" id="message-text"></textarea>
+                  </div>
+  
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a class="btn btn-danger ml-3" (click)="deletePost()">Delete </a>
+                  </div>
+                </form>
+            
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

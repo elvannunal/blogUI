@@ -1,0 +1,35 @@
+<div class="site-section container">
+  <div class="row" *ngFor="let p of post">
+    <div class="col-4">
+      <div class="half-post-entry d-block d-lg-flex bg-light">
+        <h1 class="postMain">{{p.title}}</h1>
+        <div class="img-bg" [style.background-image]="'url(' + p.featuredImageUrl + ')'" [style.background-size]="'cover'"></div>
+        <div class="contents col-xl-8 py-5 px-md-5">
+          <span class="caption">{{p.author}}</span>
+          <h2><a href="blog-single.html"></a></h2>
+          <p class="mb-3">{{p.content}}</p>
+          <div class="post-meta">
+            <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">Food</a></span>
+            <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                class="icon-star2"></span></span>
+            <button type="submit" class="btn" [routerLink]="['/api/Post', p.id]">Update This Blog</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <aside id="colorlib-aside" role="complementary" class="js-fullheight" style="height: 908px;">
+        <nav id="colorlib-main-menu" role="navigation">
+          <ul>
+            <li class="colorlib-active">
+              <a href="api/Post">Home</a>
+            </li>
+            <li>
+              <a href="api/Post/add">Add Blog</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</div>
